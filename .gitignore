@@ -12,4 +12,4 @@ _autoplay.mp4
 .eggs
 .tox
 dist
-src/baselines/user_sessions
+src/baselines/user_sessions/*
