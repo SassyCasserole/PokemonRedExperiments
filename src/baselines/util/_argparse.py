@@ -18,15 +18,15 @@ def get_args():
     parser.add_argument('--early_stop', type=bool, default=False, help='Whether to stop the environment early')
     parser.add_argument('--action_freq', type=int, default=24, help='Frequency of actions')
     parser.add_argument('--init_state', type=str, default='../has_pokedex_nballs.state', help='Initial state of the environment')
-    parser.add_argument('--max_steps', type=int, default=DEFAULT_EP_LENGTH, help='Maximum number of steps in the environment')
+    parser.add_argument('--max_steps', type=int, default=DEFAULT_EP_LENGTH, help=f'Maximum number of steps in the environment. Default is {DEFAULT_EP_LENGTH}')
     parser.add_argument('--print_rewards', type=bool, default=True, help='Whether to print rewards')
     parser.add_argument('--save_video', type=bool, default=True, help='Whether to save a video of the environment')
     parser.add_argument('--fast_video', type=bool, default=False, help='Whether to save a fast video of the environment')
-    parser.add_argument('--session_path', type=str, default=get_new_session(), help='Path at which to save session data')
+    parser.add_argument('--session_path', type=str, default=get_new_session(), help='Path at which to save session data relative to "src/baselines" directory.')
     parser.add_argument('--gb_path', type=str, default=GB_FILENAME, help='Path to the gameboy ROM')
     parser.add_argument('--debug', type=bool, default=False, help='Whether to run the environment in debug mode')
     parser.add_argument('--sim_frame_dist', type=float, default=2_000_000.0, help='Simulation frame distance')
-    parser.add_argument('--cpu_count', type=int, default=DEFAULT_CPU_COUNT, help='Number of CPUs to use')
+    parser.add_argument('--cpu_count', type=int, default=DEFAULT_CPU_COUNT, help=f'Number of CPUs to use. Default is {DEFAULT_CPU_COUNT}.')
 
     # Parses only the known args to fix an issue with argv[1] being used as a save path
     args, unknown_args = parser.parse_known_args()
