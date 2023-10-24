@@ -36,18 +36,14 @@ Note: the `PokemonRed.gb` file MUST be in the main directory.
 Your current directory MUST be the `src/baselines/` directory in order to run any Python scripts.
 
 ## Training the Model 🏋️ 
-Note: By default this can use up to ~100G of RAM. You can decrease this by:
-
-a) Lowering `--cpu_count` from the command line when calling the script.
-
-b) Lowering `--max_steps` from the command line when calling the script.
+Note: By default this can use up to ~100G of RAM. 
+You can decrease this by lowering the value of parameter `--cpu_count` and/or `--max_steps` from the command line when calling the script.
 
 Setting these to lower than their defaults may affect the results. Also, the model behavior may become degenerate for up to the first 50 training iterations or so before starting to improve. This could likely be fixed with better hyperparameters, but I haven't had the time or resources to sweep these.
 
 1. Previous steps 1-3
 2. From main directory, run `parallel_tutorial`
-3. Or, 
-Go to `src/baselines/` and run ```python run_baseline_parallel.py```
+3. Or go to `src/baselines/` and run ```python run_baseline_parallel.py```
 
 
 ## Tracking Training Progress 📈 
@@ -56,3 +52,7 @@ You can view the current state of each emulator, plot basic stats, and compare t
 
 ## Extra 🐜
 Map visualization code can be found in `src/visualization/` directory.
+
+## Tests
+1. Run tests by running `tox` from any directory in the repo
+2. Add or modify tests in the `tests` repo using PyTest
